@@ -39,7 +39,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.Employ
         Employee employee = employees.get(position);
         holder.name.setText(employee.getName());
         holder.phoneNumber.setText(employee.getPhoneNumber());
-        holder.skills.setText(employee.getSkills().toString().replace("[", "/").replace("]", "/"));
+        holder.skills.setText(employee.getSkills().toString());//.replace("[", "/").replace("]", "/"));
 
 
     }

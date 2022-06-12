@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity(tableName = "employees")
-@TypeConverters(value = Converter.class)
+
 public class Employee {
 
 
@@ -29,8 +29,8 @@ public class Employee {
 
     @SerializedName("skills")
     @Expose
-//    private List<String> skills = Arrays.asList(new String[]{"?-unknow-?"});
-    private String[] skills;
+    @TypeConverters(value = Converter.class)
+    private List<String> skills = Arrays.asList(new String[]{"?-unknow-?"});
 
 
     public String getName() {
@@ -48,22 +48,15 @@ public class Employee {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-//
-//    public List<String> getSkills() {
-//        return skills;
-//    }
-//
-//    public void setSkills(List<String> skills) {
-//        this.skills = skills;
-//    }
 
-    public String[] getSkills() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkills(String[] skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
     }
+
 
     public int getId() {
         return id;
@@ -72,4 +65,6 @@ public class Employee {
     public void setId(int id) {
         this.id = id;
     }
+
+
 }
