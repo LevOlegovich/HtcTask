@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HtcTask</string>
+    <string name="DEFAULT">\?-Unknow-?</string>
 </resources>

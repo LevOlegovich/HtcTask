@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 
 import com.nlv2022.htctask.api.ApiFactory;
@@ -106,7 +105,7 @@ public class EmployeeViewModel extends AndroidViewModel {
                     public void accept(ExampleRootCE exampleRootCE) throws Exception {
                         deleteAllEmployees();
                         insertEmployees(exampleRootCE.getCompany().getEmployees());
-                        Toast.makeText(getApplication().getApplicationContext(), "Успешно", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplication().getApplicationContext(), "Данные загружены", Toast.LENGTH_LONG).show();
 
                     }
                 }, new Consumer<Throwable>() {
@@ -114,6 +113,7 @@ public class EmployeeViewModel extends AndroidViewModel {
                     public void accept(Throwable throwable) throws Exception {
 
                         errors.setValue(throwable);
+                        Toast.makeText(getApplication().getApplicationContext(), throwable.getMessage(), Toast.LENGTH_LONG).show();
 
                     }
                 });
@@ -129,11 +129,7 @@ public class EmployeeViewModel extends AndroidViewModel {
         super.onCleared();
     }
 
-    //    public void disposeDisposable() {
-//        if (compositeDisposable != null) {
-//            compositeDisposable.dispose();
-//        }
-//    }
+
 
 
 }

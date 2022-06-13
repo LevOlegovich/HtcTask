@@ -8,7 +8,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.nlv2022.htctask.converters.Converter;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,12 +24,12 @@ public class Employee {
     private String name = "?-Unknow-?";
     @SerializedName("phone_number")
     @Expose
-    private String phoneNumber = "?-unknow-?";
+    private String phoneNumber = "?-Unknow-?";
 
     @SerializedName("skills")
     @Expose
     @TypeConverters(value = Converter.class)
-    private List<String> skills = Arrays.asList(new String[]{"?-unknow-?"});
+    private List<String> skills = Arrays.asList(new String[]{"?-Unknow-?"});
 
 
     public String getName() {

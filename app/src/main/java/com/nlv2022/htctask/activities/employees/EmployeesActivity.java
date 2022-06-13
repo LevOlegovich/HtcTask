@@ -42,6 +42,7 @@ public class EmployeesActivity extends AppCompatActivity {
 
 
         viewModel = new ViewModelProvider(this).get(EmployeeViewModel.class);
+        viewModel.loadDate();
         viewModel.getEmployees().observe(this, new Observer<List<Employee>>() {
             @Override
             public void onChanged(List<Employee> employees) {
@@ -53,34 +54,16 @@ public class EmployeesActivity extends AppCompatActivity {
             @Override
             public void onChanged(Throwable throwable) {
                 if (throwable != null) {
-                    Toast.makeText(EmployeesActivity.this, "Error!!!", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(EmployeesActivity.this, "Error!!!", Toast.LENGTH_LONG).show();
                     viewModel.clearErrors();
                 }
             }
         });
-        viewModel.loadDate();
+
 
 
 
     }
 
 
-//
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-////        presenter.disposeDisposable();
-//    }
-//
-//    @Override
-//    public void showData(List<Employee> employees) {
-//        adapter.setEmployees(employees);
-//
-//    }
-//
-//    @Override
-//    public void showError() {
-//        Toast.makeText(this, "Error", Toast.LENGTH_LONG).show();
-//
-//    }
 }

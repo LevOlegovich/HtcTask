@@ -1,21 +1,11 @@
 package com.nlv2022.htctask.converters;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
 import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
-import com.nlv2022.htctask.pojo.Employee;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Converter {
 

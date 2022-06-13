@@ -14,16 +14,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments += [
-//                        "room.schemaLocation"  : "$projectDir/schemas".toString(),
-//                        "room.incremental"     : "true",
-//                        "room.expandProjection": "true"]
-//            }
-//        }
-
-        multiDexEnabled true
+//        multiDexEnabled true
 
 
     }
@@ -55,27 +46,27 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
-// https://github.com/ReactiveX/RxAndroid
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
 
-    // GSON body parser
-    implementation 'com.google.code.gson:gson:2.9.0'
+    // https://github.com/ReactiveX/RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
 
+// for api  19
+    implementation("com.squareup.okhttp3:okhttp:3.12.12") {
+        force = true //API 19 support
+    }
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.12'
 
 
     implementation "androidx.room:room-runtime:2.4.2"
     annotationProcessor "androidx.room:room-compiler:2.4.2"
 
 
-    // optional - Guava support for Room, including Optional and ListenableFuture
-
-
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.4.1"
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata:2.4.1"
 
-    implementation 'com.android.support:multidex:1.0.3'
+//    implementation "androidx.multidex:multidex:2.0.1"
 
 
 }
